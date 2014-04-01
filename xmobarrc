@@ -1,0 +1,22 @@
+Config {
+         font = "xft:Liberation Sans:style=Regular:size=10:antialias=true"
+       , bgColor = "#B272822"
+       , fgColor = "grey"
+       , borderColor = "white"
+       , position = TopSize L 100 25
+       , lowerOnStart = True
+       , commands = [
+            Run DynNetwork ["-L","50","-H","5000","--low","gray","--normal","#A6E22E","--high","#F92672","--template","<rx>:<tx> Kb/s"] 50
+          , Run Wireless "wifi" ["--template","<essid> <quality>"] 50
+          , Run Com "/home/avo/bin/load-average" [] "load-average" 100
+          , Run Com "/home/avo/bin/ip-list" [] "ip-list" 100
+          , Run Com "/home/avo/bin/listening-ports" [] "listening-ports" 100
+          , Run Battery ["--template","<left>% (<timeleft>)","-L","50","-H","75","-h","#A6E22E","-n","grey","-l","#F92672"] 100
+          , Run StdinReader
+          , Run Com "/home/avo/bin/xmobar-inet-status" [""] "status" 20
+                    , Run Date "%a %b %_d %Y" "date" 10
+           ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %status% %StdinReader% }{ %load-average% · %dynnetwork% · %wifiwi% · [ %ip-list% ] · [ %listening-ports% ] %battery%"
+}

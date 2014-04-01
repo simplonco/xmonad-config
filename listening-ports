@@ -1,0 +1,1 @@
+ss -lnt | awk '{ print $4 }' | grep "^*" | cut -d ":" -f 2 | xargs | sed 's/ /, /g'

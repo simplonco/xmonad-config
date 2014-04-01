@@ -1,0 +1,1 @@
+ip -o addr | grep -v -e " lo " -e "inet6 " -e " docker0 " | sed -r "s;(.*)inet ([0-9]{1,3}\..*)/.*;\2;g" | xargs
