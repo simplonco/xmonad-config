@@ -5,6 +5,7 @@ import XMonad.Actions.SpawnOn
 import XMonad.Actions.WindowGo
 import XMonad.Config.Azerty
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Util.Paste
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -87,8 +88,7 @@ main = do
                         [
                           ("M-q", spawn "killall xmobar; xmonad --recompile && xmonad --restart")
                         , ("M-b", sendMessage ToggleStruts)
-                        -- X-selection-paste buffer
-                        --, ((0, xK_Insert), pasteSelection))
+                        , ("<Insert>", pasteSelection)
                         , ("M-x", spawn "slock")
                         , ("M-u", focusUrgent)
                         , ("M-p", spawn "dmenu_run_aliases -fn 'Liberation Sans-10' -nb black -nf white -sf black -sb '#A6E22E' -i -f -h 24")
