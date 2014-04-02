@@ -1,6 +1,6 @@
 Minimalistic xmonad config with xmobar.
 
-Requires xmonad-contrib and xmobar.
+Requires xmonad-contrib, xmobar and dmenu (with height patch).
 
 **Features**
 
@@ -10,8 +10,9 @@ Requires xmonad-contrib and xmobar.
 
 **Installation**
 
-1. replace home dir paths
-2. set your terminal
-3. run `./install.sh`
+1. clone in `~/.xmonad`
+2. replace home dir paths
+3. set your terminal
+4. run `./install.sh`
 
 NB: install Liberation Sans (`ttf-liberation` in Arch) for a nice, readable font.
