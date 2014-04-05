@@ -8,12 +8,12 @@ Config {
        , commands = [
             Run DynNetwork ["-L","50","-H","5000","--low","gray","--normal","#A6E22E","--high","#F92672","--template","<rx>:<tx> Kb/s"] 50
           , Run Wireless "wifi" ["--template","<essid> <quality>"] 50
-          , Run Com "/home/avo/bin/load-average" [] "load-average" 100
-          , Run Com "/home/avo/bin/ip-list" [] "ip-list" 100
-          , Run Com "/home/avo/bin/listening-ports" [] "listening-ports" 100
+          , Run Com "/home/avo/.xmonad/load-average" [] "load-average" 100
+          , Run Com "/home/avo/.xmonad/ip-list" [] "ip-list" 100
+          , Run Com "/home/avo/.xmonad/listening-ports" [] "listening-ports" 100
           , Run Battery ["--template","<left>% (<timeleft>)","-L","50","-H","75","-h","#A6E22E","-n","grey","-l","#F92672"] 100
           , Run StdinReader
-          , Run Com "/home/avo/bin/xmobar-inet-status" [""] "status" 20
+          , Run Com "/home/avo/.xmonad/xmobar-inet-status" [""] "status" 20
                     , Run Date "%a %b %_d %Y" "date" 10
            ]
        , sepChar = "%"
