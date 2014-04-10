@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+
 green=#A6E22E
 red=#F92672
 
-if ping -w 1 -c 1 8.8.8.8 > /dev/null; then
+ping -c 1 8.8.8.8 > /dev/null
+
+if [ $? = 0 ]; then
 	echo "<fc=$green>λ</fc>"
 else
 	echo "<fc=$red>λ</fc>"

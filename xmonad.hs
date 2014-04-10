@@ -29,6 +29,7 @@ spawnToWorkspace workspace program = do
 -- Send applications to their dedicated Workspace
 myManageHook = composeAll
                 [
+                  manageSpawn,
                   className =? "virtualbox"  --> doShift "6",
                   className =? "irc"         --> doShift "7",
                   className =? "hipchat"     --> doShift "8",
