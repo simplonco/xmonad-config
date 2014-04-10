@@ -50,13 +50,12 @@ myLayout = (
 myStartupHook = do
     spawnOn "1" "urxvt"
     spawnOn "2" "chromium --proxy-server='socks5://localhost:9999' --proxy-bypass-list=localhost;127.0.0.1 --host-resolver-rules='MAP * ~NOTFOUND , EXCLUDE localhost' --user-agent='Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11'"
-    --spawnOn "3" "firefox-aurora"
+    spawnOn "3" "firefox-aurora"
     spawnOn "4" "urxvt"
-    spawnOn "6" "skype"
+    spawnOn "7" "urxvt rc -e tmuxinator chat"
     spawnOn "8" "nemo"
-    spawnOn "7" "urxvt -class irc -e tmuxinator chat"
-    spawnOn "0" "urxvt -class todo -e vim ~/Dropbox/todo/todo.txt"
     spawnOn "9" "surf https://www.google.com/calendar"
+    spawnOn "0" "urxvt -e vim ~/Dropbox/todo/todo.txt"
 
 myFocusedBorderColor = "#444444"
 myNormalBorderColor = "#111111"
