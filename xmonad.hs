@@ -47,25 +47,25 @@ myLayout = (
     noBorders (Fullscreen.fullscreenFull Full)
 
 myStartupHook = do
-    spawnOn "1" "xterm"
-    spawnOn "2" "chromium --proxy-server='socks5://localhost:9999' --host-resolver-rules='MAP * ~NOTFOUND , EXCLUDE localhost' --user-agent='Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11'"
-    spawnOn "3" "firefox-aurora"
-    spawnOn "4" "xterm"
-    spawnOn "5" "xterm -class system"
+    spawnOn "1" "urxvt"
+    spawnOn "2" "chromium --proxy-server='socks5://localhost:9999' --proxy-bypass-list=localhost;127.0.0.1 --host-resolver-rules='MAP * ~NOTFOUND , EXCLUDE localhost' --user-agent='Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11'"
+    --spawnOn "3" "firefox-aurora"
+    spawnOn "4" "urxvt"
     spawnOn "6" "skype"
-    spawnOn "7" "xterm -class irc -e tmuxinator chat"
-    spawnOn "0" "xterm -class todo -e vim ~/Dropbox/todo/todo.txt"
-    spawnToWorkspace "9" "surf https://www.google.com/calendar"
+    spawnOn "8" "nemo"
+    spawnOn "7" "urxvt -class irc -e tmuxinator chat"
+    spawnOn "0" "urxvt -class todo -e vim ~/Dropbox/todo/todo.txt"
+    spawnOn "9" "surf https://www.google.com/calendar"
 
 myFocusedBorderColor = "#444444"
-myNormalBorderColor = "#000000"
+myNormalBorderColor = "#111111"
 monokaiGreen = "#A6E22E"
 monokaiBlue = "#66D9EF"
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmobarrc"
     xmonad $ withUrgencyHook NoUrgencyHook $ ewmh azertyConfig {
-    terminal            = "xterm",
+    terminal            = "urxvt",
     workspaces          = myWorkspaces,
     normalBorderColor   = myNormalBorderColor,
     focusedBorderColor  = myFocusedBorderColor,
