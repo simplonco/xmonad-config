@@ -31,9 +31,7 @@ myManageHook = composeAll
                 [
                   manageSpawn,
                   className =? "virtualbox"  --> doShift "6",
-                  className =? "irc"         --> doShift "7",
-                  className =? "hipchat"     --> doShift "8",
-                  className =? "todo"        --> doShift "0",
+                  className =? "hipchat"     --> doShift "6",
                   className =? "Xmessage"    --> doFloat,
                   isDialog                   --> doCenterFloat,
                   --className =? "zenity"      --> doFloat,
