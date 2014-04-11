@@ -1,9 +1,9 @@
 Config {
-         font = "xft:Liberation Sans:style=Regular:size=10:antialias=true"
+         font = "xft:Liberation Mono:style=Bold:size=9:antialias=true"
        , bgColor = "#B272822"
        , fgColor = "grey"
        , borderColor = "white"
-       , position = TopSize L 100 25
+       , position = BottomSize L 100 21
        , lowerOnStart = True
        , commands = [
             Run DynNetwork ["-L","50","-H","5000","--low","gray","--normal","#A6E22E","--high","#F92672","--template","<rx>:<tx> Kb/s"] 50
@@ -18,5 +18,5 @@ Config {
            ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %status% %StdinReader% }{ %load-average% · %dynnetwork% · %wifiwi% · [ %ip-list% ] · [ %listening-ports% ] %battery%"
+       , template = " %status% %StdinReader% }{ %load-average% · %dynnetwork% · %wifiwi% · [ %ip-list% ] · [ %listening-ports% ] %battery% "
 }

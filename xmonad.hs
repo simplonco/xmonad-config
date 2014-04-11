@@ -49,13 +49,14 @@ myStartupHook = do
     spawnOn "1" "urxvt"
     spawnOn "2" "chromium --proxy-server='socks5://localhost:9999' --proxy-bypass-list=localhost;127.0.0.1 --host-resolver-rules='MAP * ~NOTFOUND , EXCLUDE localhost' --user-agent='Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11'"
     spawnOn "3" "firefox-aurora"
-    spawnOn "4" "urxvt"
+    spawnOn "4" "urxvt -e pry"
+    spawnOn "5" "urxvt -e tmux"
     spawnOn "7" "urxvt rc -e tmuxinator chat"
     spawnOn "8" "nemo"
     spawnOn "9" "surf https://www.google.com/calendar"
     spawnOn "0" "urxvt -e vim ~/Dropbox/todo/todo.txt"
 
-myFocusedBorderColor = "#444444"
+myFocusedBorderColor = "#900"
 myNormalBorderColor = "#111111"
 monokaiGreen = "#A6E22E"
 monokaiBlue = "#66D9EF"
@@ -89,7 +90,7 @@ main = do
                         , ("<Insert>", pasteSelection)
                         , ("M-x", spawn "slock")
                         , ("M-u", focusUrgent)
-                        , ("M-p", spawn "dmenu_run_aliases -fn 'Liberation Sans-10' -nb black -nf white -sf black -sb '#A6E22E' -i -f -h 24")
+                        , ("M-p", spawn "dmenu_run_aliases -fn 'Liberation Mono-9:bold' -nb black -nf white -sf black -sb '#A6E22E' -b -i -f -h 24")
                         , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 3%+")
                         , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 3%-")
                         , ("C-M-<Left>", prevWS )
