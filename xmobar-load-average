@@ -1,0 +1,9 @@
+load=$(awk '{print $1}' /proc/loadavg)
+loadint=${load/.*}
+
+red=#F92672
+gray=#666666
+
+[ $loadint -ge 2 ] && color=$red || color=$gray
+
+echo "<fc=$color>$load</fc>"
