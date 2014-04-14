@@ -21,11 +21,6 @@ import XMonad.Hooks.UrgencyHook
 
 myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-spawnToWorkspace :: String -> String -> X ()
-spawnToWorkspace workspace program = do
-                                     spawn program
-                                     windows $ W.greedyView workspace
-
 -- Send applications to their dedicated Workspace
 myManageHook = composeAll
                 [
