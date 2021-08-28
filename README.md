@@ -1,19 +1,19 @@
-Minimalistic xmonad config with xmobar.
+# Minimalistic `xmonad` configuration with `xmobar`
 
-Requires xmonad-contrib, xmobar and dmenu (with height patch).
+Requires `xmonad-contrib`, `xmobar` and `dmenu` (with `height` patch).
 
-**Features**
+## Features
 
 * launch programs in dedicated workspaces on startup
-* Monokai colors
+* **Monokai** colors
 * keybindings for Thinkpad laptops
 
-**Installation**
+## Installation
 
 1. install packages: `xmonad`, `xmonad-contrib` & `dmenu-xft-height`
 2. clone in `~/.xmonad`
-3. replace home dir paths
+3. replace `home` directory paths
 4. set your terminal
 5. run `./install.sh`
 
-NB: install Liberation Sans (`ttf-liberation` in Arch) for a nice, readable font.
+> _NB:_ install **Liberation Sans** (`ttf-liberation` in Arch) for a nice, readable font.
